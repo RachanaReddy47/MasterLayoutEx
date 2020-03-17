@@ -1,0 +1,31 @@
+﻿@model MasterLayoutEx.Models.Login
+@{
+    ViewBag.Title = "LoginPage";
+}
+
+<h2>LoginPage</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>Login</td>
+            <td>@Html.TextBoxFor(a=>a.Username)</td>
+            <td>@Html.ValidationMessageFor(a=>a.Username,"",new { @class = "text-danger" })</td>
+        </tr>
+
+        <tr>
+            <td>Password</td>
+            <td>@Html.TextBoxFor(a=>a.Password)</td>
+            <td>@Html.ValidationMessageFor(a=>a.Password,"",new { @class = "text_danger" })</td>
+        </tr>
+       
+        <tr>
+            <td><input type="submit"/></td>
+        </tr>
+    </table>
+
+    if(ViewBag.msg!=null)
+    {
+        <h3>@ViewBag.msg</h3>
+    }
+}

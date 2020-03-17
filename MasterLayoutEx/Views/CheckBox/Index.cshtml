@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using(Html.BeginForm("Index2","CheckBox"))
+{
+<table>
+    <tr>
+        <td>Empno</td>
+        <td>Ename</td>
+        <td>Job</td>
+        <td>Manager</td>
+        <td>HireDate</td>
+        <td>Salary</td>
+        <td>Commission</td>
+        <td>Dept no</td>
+    </tr>
+    @foreach (var E in ViewBag.L1 as IList<MasterLayoutEx.Models.EMPDATA>)
+    {
+<tr>
+    @*<td>@Html.CheckBox(@E.EMPNO,"CBK")</td>*@
+    <td><input type="checkbox" id="@E.EMPNO" name="CBK" value="@E.EMPNO" /> </td>
+    <td>@E.EMPNO</td>
+    <td>@E.ENAME</td>
+    <td>@E.JOB</td>
+    <td>@E.MGR</td>
+    <td>@E.HIREDATE</td>
+    <td>@E.SAL</td>
+    <td>@E.COMM</td>
+    <td>@E.DEPTNO</td>
+</tr>
+      }
+    <tr><td><input type="submit" /></td></tr>
+        
+    </table>
+}
+@*<script>
+    function func1() {
+
+        //alert("Hi");
+        var eno = document.getElementById("EMPNO").value();
+         window.location.href = "/CheckBox/Index2/" + eno;
+    }
+</script>*@

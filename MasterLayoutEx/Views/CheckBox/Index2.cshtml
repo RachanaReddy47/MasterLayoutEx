@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Index2</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>Empno</td>
+            <td>Ename</td>
+            <td>Job</td>
+            <td>Manager</td>
+            <td>HireDate</td>
+            <td>Salary</td>
+            <td>Commission</td>
+            <td>Dept no</td>
+        </tr>
+        @foreach (var E in ViewBag.L2)
+        {
+            <tr>
+                <td>@E.EMPNO</td>
+                <td>@E.ENAME</td>
+                <td>@E.JOB</td>
+                <td>@E.MGR</td>
+                <td>@E.HIREDATE</td>
+                <td>@E.SAL</td>
+                <td>@E.COMM</td>
+                <td>@E.DEPTNO</td>
+
+            </tr>
+        }
+    </table>
+}
+
